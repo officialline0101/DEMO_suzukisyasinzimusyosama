@@ -1040,8 +1040,7 @@
         </div>
 
         <div class="labelhidarizurasi">
-            祈祷されるお子様のお名前・年齢・性別<br>
-            <span style="font-size: 14px;">(複数の場合は全員分)</span>
+            祈祷されるお子様のお名前・年齢・性別
             <span class="required">必須</span>
         </div>
 
@@ -1049,17 +1048,17 @@
 
         <script>
             document.getElementById("mugwortmainkid").placeholder =
-                "例：山田花子・7歳・女の子\n山田太郎・5歳・男の子\n山田次郎・3歳・男の子";
+                "例：山田花子・7歳・女の子";
         </script>
-
-        <div class="labelhidarizurasi">付き添いご兄弟のお名前・年齢・性別</div>
-        <textarea id="mugwortsiblinginfo" placeholder="お名前・年齢・性別をご記入ください。"></textarea>
 
 <div class="labelhidarizurasi">
     祈祷されるお子様のお名前・年齢・性別二人目
+    <span style="font-size: 14px;">(二人目がいる場合)</span>
 </div>
 <textarea id="mugwortmainkid2" placeholder="2人目のお子様のお名前・年齢・性別をご記入ください。"></textarea>
 
+        <div class="labelhidarizurasi">付き添いご兄弟のお名前・年齢・性別</div>
+        <textarea id="mugwortsiblinginfo" placeholder="お名前・年齢・性別をご記入ください。"></textarea>
 
         <div class="labelhidarizurasi">撮影に参加される方の人数と続柄</div>
         <input type="text" id="mugwortparticipants" placeholder="例：祖母2人、父、母 など">
@@ -1244,7 +1243,7 @@
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `【七五三】\n｟お名前｠\n・${formData.name}\n\n｟ご住所｠\n・${formData.Yourresidentialaddress}\n\n｟電話番号｠\n・${formData.phone}\n\n【希望日時】：\n｟第一希望日｠\n${formatDate(formData.dates[0])}\n\n｟第二希望日｠\n${formatDate(formData.dates[1])}\n\n｟第三希望日｠\n${formatDate(formData.dates[2])}\n\n｟プラン｠\n・${formData.visitCount}\n\n｟祈祷されるお子様｠\n・${formData.mugwortmainkid}\n\n｟祈祷されるお子様二人目｠\n・${formData.mugwortmainkid2}\n\n｟付き添いご兄弟｠\n・${formData.mugwortsiblinginfo}\n\n｟撮影に参加される方｠\n・${formData.mugwortparticipants}\n\n｟神社名｠\n・${formData.mugwortshrinename}\n\n｟ご祈祷の予約時間｠\n・${formData.mugwortreservationtime}\n\n｟生花撮影｠\n・${formData.FreshflowerphotographyCount}\n\n｟お支度風景｠\n・${formData.preparationphotoCount}\n\n｟和装レンタルの有無｠\n・${formData.kimonoCount}\n\n｟お支度ご希望｠\n・${formData.hairmakeupCount}\n\n｟メッセージ｠${formData.message}`
+                text: `【予約フォーム】\n≪七五三≫\n\n｟お名前｠\n・${formData.name}\n\n｟ご住所｠\n・${formData.Yourresidentialaddress}\n\n｟電話番号｠\n・${formData.phone}\n\n【希望日時】：\n｟第一希望日｠\n${formatDate(formData.dates[0])}\n\n｟第二希望日｠\n${formatDate(formData.dates[1])}\n\n｟第三希望日｠\n${formatDate(formData.dates[2])}\n\n｟プラン｠\n・${formData.visitCount}\n\n｟祈祷されるお子様｠\n・${formData.mugwortmainkid}\n\n｟祈祷されるお子様二人目｠\n・${formData.mugwortmainkid2}\n\n｟付き添いご兄弟｠\n・${formData.mugwortsiblinginfo}\n\n｟撮影に参加される方｠\n・${formData.mugwortparticipants}\n\n｟神社名｠\n・${formData.mugwortshrinename}\n\n｟ご祈祷の予約時間｠\n・${formData.mugwortreservationtime}\n\n｟生花撮影｠\n・${formData.FreshflowerphotographyCount}\n\n｟お支度風景｠\n・${formData.preparationphotoCount}\n\n｟和装レンタルの有無｠\n・${formData.kimonoCount}\n\n｟お支度ご希望｠\n・${formData.hairmakeupCount}\n\n｟メッセージ｠${formData.message}`
             }]).then(() => {
                 alert('お問合せありがとうございます。追って担当者から返信をさせて頂きます。');
                 liff.closeWindow();
